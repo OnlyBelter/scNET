@@ -1,0 +1,18 @@
+WARNING: adata.X seems to be already log-transformed.
+/home/phyxiongx/github/scNET/scNET/Data/format_h_sapiens.csv
+N genes: (11049, 9172)
+Highly variable genes: 1933
+Training:   0%|          | 0/300 [00:00<?, ?it/s]Training:   0%|          | 0/300 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/phyxiongx/github/scNET/scNET.py", line 71, in <module>
+    scNET.run_scNET(obj, pre_processing_flag=False, human_flag=False, number_of_batches=10, split_cells=True, max_epoch=300, model_name = "test")
+  File "/home/phyxiongx/github/scNET/scNET/main.py", line 396, in run_scNET
+    model = train(data, loader, highly_variable_index, number_of_batches=number_of_batches, max_epoch=max_epoch, 
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/phyxiongx/github/scNET/scNET/main.py", line 185, in train
+    knn_edge_index = crate_knn_batch(loader.dataset.knn, batch[1])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/phyxiongx/github/scNET/scNET/main.py", line 119, in crate_knn_batch
+    adjacency_matrix = torch.tensor(knn[idxs][:,idxs].toarray())
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Could not infer dtype of numpy.float32
