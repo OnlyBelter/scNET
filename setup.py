@@ -13,7 +13,7 @@ setup(
         'scNET': ['Data/*',"KNNs/*","Embedding/*","Models/*"]
     },
     install_requires=[
-        'torch==2.2.2',
+        # 'torch==2.2.2', # install manually by pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu118
         'torch-geometric==2.5.3',
         'pandas>=2.2.1',
         'numpy==1.26.4',
