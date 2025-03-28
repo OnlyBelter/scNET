@@ -1,29 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # **scNET: Learning Context-Specific Gene and Cell Embeddings by Integrating Single-Cell Gene Expression Data with Protein-Protein Interaction Information**
-
-# **Install scnet using pip**
-
-# **It may be necessary to restart (not delete) the runtime after installing ScENT in Google Colab. We are working on fixing this issue in future releases.**
-
-# In[1]:
-
-
-get_ipython().system('pip install scnet')
-
-
-# **Download example data**
-
-# In[2]:
-
-
-get_ipython().system('pip install gdown')
-
-
-# In[3]:
-
-
 import gdown
 import os
 download_url = f'https://drive.google.com/uc?id=1C_G14cWk95FaDXuXoRw-caY29DlR9CPi'
@@ -44,10 +21,10 @@ import scNET
 scNET.main.MAX_CELLS_BATCH_SIZE = 3000
 
 #for GPU with 40GB memory
-scNET.main.MAX_CELLS_BATCH_SIZE = 4000
+# scNET.main.MAX_CELLS_BATCH_SIZE = 4000
 
 #For GPU with 80GB memory or more
-scNET.main.MAX_CELLS_BATCH_SIZE = 8000
+# scNET.main.MAX_CELLS_BATCH_SIZE = 8000
 
 #otherwize, do not change the default value
 

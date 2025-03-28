@@ -24,7 +24,8 @@ setup(
         'matplotlib>=3.8.0',
         'igraph',
         'leidenalg',
-        'tqdm'
+        'tqdm',
+        'gdown'
     ],
     author='Ron Sheinin',
     description='Our method employs a unique dual-graph architecture based on graph neural networks (GNNs), enabling the joint representation of gene expression and PPI network data',
