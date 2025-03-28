@@ -6,13 +6,22 @@ Highly variable genes: 1933
 Traceback (most recent call last):
   File "/home/phyxiongx/github/scNET/scNET.py", line 71, in <module>
     scNET.run_scNET(obj, pre_processing_flag=False, human_flag=False, number_of_batches=10, split_cells=True, max_epoch=300, model_name = "test")
-  File "/home/phyxiongx/github/scNET/scNET/main.py", line 396, in run_scNET
+  File "/home/phyxiongx/github/scNET/scNET/main.py", line 397, in run_scNET
     model = train(data, loader, highly_variable_index, number_of_batches=number_of_batches, max_epoch=max_epoch, 
             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/phyxiongx/github/scNET/scNET/main.py", line 185, in train
+  File "/home/phyxiongx/github/scNET/scNET/main.py", line 186, in train
     knn_edge_index = crate_knn_batch(loader.dataset.knn, batch[1])
                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/phyxiongx/github/scNET/scNET/main.py", line 119, in crate_knn_batch
+  File "/home/phyxiongx/github/scNET/scNET/main.py", line 120, in crate_knn_batch
     adjacency_matrix = torch.tensor(knn[idxs][:,idxs].toarray())
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-RuntimeError: Could not infer dtype of numpy.float32
+                                    ~~~^^^^^^
+  File "/home/phyxiongx/miniconda3/envs/scnet/lib/python3.11/site-packages/scipy/sparse/_index.py", line 30, in __getitem__
+    index, new_shape = self._validate_indices(key)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/phyxiongx/miniconda3/envs/scnet/lib/python3.11/site-packages/scipy/sparse/_index.py", line 234, in _validate_indices
+    elif (ix := _compatible_boolean_index(idx, self.ndim)) is not None:
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/phyxiongx/miniconda3/envs/scnet/lib/python3.11/site-packages/scipy/sparse/_index.py", line 442, in _compatible_boolean_index
+    if idx.dtype.kind == 'b':
+       ^^^^^^^^^^^^^^
+AttributeError: 'torch.dtype' object has no attribute 'kind'
