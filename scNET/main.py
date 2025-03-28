@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 import scanpy as sc
-import torch
+# import torch
 import networkx as nx
 from scNET.MultyGraphModel import scNET
 from scNET.Utils import save_model, save_obj
@@ -28,7 +28,8 @@ MAX_CELLS_FOR_SPLITING = 10000
 EXPRESSION_CUTOFF = 0.0
 NUM_LAYERS = 3
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+# device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 warnings.filterwarnings('ignore')
 
 
@@ -114,7 +115,7 @@ def crate_knn_batch(knn,idxs,k=15):
     torch.Tensor: Edge index for the sub-batch of the k-NN graph.
   """
   # check if idxs is a tensor and convert it to numpy array if necessary
-  if torch.is_tensor(idxs):
+  if torch.is_tensor(idxs) and device == 'cpu':
       idxs = idxs.cpu().detach().numpy()
   adjacency_matrix = torch.tensor(knn[idxs][:,idxs].toarray())
   row_indices, col_indices = torch.nonzero(adjacency_matrix, as_tuple=True)
