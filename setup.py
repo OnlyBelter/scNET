@@ -13,8 +13,8 @@ setup(
         'scNET': ['Data/*',"KNNs/*","Embedding/*","Models/*"]
     },
     install_requires=[
-        'torch>=2.2.2',
-        'torch-geometric>=2.6.1',
+        'torch==2.2.2',
+        'torch-geometric==2.5.3',
         'pandas>=2.2.1',
         'numpy==1.26.4',
         'networkx>=3.1',
