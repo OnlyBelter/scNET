@@ -1,0 +1,6 @@
+scNET/__pycache__/*
+scNET/Embedding/*
+.idea/
+.ipynb_checkpoints/
+example.h5ad
+scnet.egg-info/
