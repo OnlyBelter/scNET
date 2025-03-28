@@ -117,7 +117,7 @@ def crate_knn_batch(knn,idxs,k=15):
   # check if idxs is a tensor and convert it to numpy array if necessary
   if torch.is_tensor(idxs) and device == 'cpu':
       idxs = idxs.cpu().detach().numpy()
-  adjacency_matrix = torch.tensor(knn[idxs][:,idxs].toarray())
+  adjacency_matrix = torch.tensor(knn[idxs][:,idxs].toarray(), dtype=torch.float32)
   row_indices, col_indices = torch.nonzero(adjacency_matrix, as_tuple=True)
   knn_edge_index = torch.stack((row_indices, col_indices))
   knn_edge_index = torch.unique(knn_edge_index, dim=1)

@@ -4,3 +4,4 @@ scNET/Embedding/*
 .ipynb_checkpoints/
 example.h5ad
 scnet.egg-info/
+*.log
