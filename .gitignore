@@ -5,3 +5,5 @@ scNET/Embedding/*
 example.h5ad
 scnet.egg-info/
 *.log
+*.npy
+scNET/KNNs/*

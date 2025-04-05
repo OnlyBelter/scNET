@@ -6,6 +6,9 @@ Recent advances in single-cell RNA sequencing (scRNA-seq) techniques have provid
 
 ![Overview of the scNET Method](https://raw.githubusercontent.com/madilabcode/scNET/bb9385a9945e34e1e2500c8173baf5c8ece91f79/images/scNET.jpg)
 ## Download via PIP
+# If you cannot install the last version of PyTorch, you can install PyTorch with the following command manually:
+# We have cuda 11.6
+`pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu118`
 `pip install scnet`
 
 ## Download via git
